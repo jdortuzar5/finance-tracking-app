@@ -1,2 +1,4 @@
 assets copy
 __pycache__
+mongo-volume
+venv

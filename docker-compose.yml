@@ -1,0 +1,31 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: backend/
+      dockerfile: Dockerfile
+    image: finance-tracker-backend
+    ports:
+      - 8000:8000
+    depends_on: ["mongo"]
+    environment: 
+      - MONGOHOST=mongo
+
+  mongo:
+    image: "mongo"
+    container_name: "database"
+    environment: 
+      - MONGO_INITDB_DATABASE=finantial-tracker
+    volumes:
+      - ./mongo-volume:/data/db
+    ports: 
+      - 27017:27017
+  
+  frontend:
+    build:
+      context: frontend/
+      dockerfile: Dockerfile
+    image: finance-tracker-frontend
+    ports:
+      - 5000:5000
+    depends_on: ["backend"]

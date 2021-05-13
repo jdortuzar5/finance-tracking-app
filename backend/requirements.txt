@@ -36,7 +36,7 @@ packaging==20.3
 pep517==0.8.2
 progress==1.5
 promise==2.3
-pydantic==1.5.1
+pydantic==1.6.2
 pylint==2.5.3
 pymongo==3.10.1
 pyparsing==2.4.6
